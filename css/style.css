@@ -1,0 +1,99 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.build{
+    padding-top:100px;
+}
+footer * ul{
+    list-style: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+}
+footer * a{
+    color: #fff;
+}
+footer * a:hover{
+    text-decoration: none;
+    color:#9d9d9d;
+}
+#content{
+    min-height: 600px;
+}
+#item_list {
+    padding-top: 50px;
+}
+
+#login-panel .panel-footer{
+    font-weight:normal;
+}
+
+footer {
+    height: auto;
+    padding:0 10px;
+    background-color: #101010;
+    color:#fff;
+    bottom: 0;
+    width: 100%;
+    margin-top:10px;
+}
+
+.red{
+    color:red;
+}
+
+#settings-container{
+    margin-bottom:10px;
+}
+
+.navbar-brand{
+    font-size:20px;
+}
+
+@media(max-width:768px) {
+    #banner_content {
+        padding-bottom: 15%;
+    }
+    footer{
+        text-align:left;
+    }
+}
+th{
+    color:#dedede;
+    background-color:#000;
+}
+.error{
+    color:red;
+}
+#contact-img{
+    position: absolute;
+    float:right;
+}
+.index-image{
+    font-weight: 500;
+    list-style-type: square;
+}
+.footer-content{
+    padding: 0 100px;
+}
+.not-active{
+    cursor:default;
+    pointer-events: none;
+}
+.input-group-addon{
+    color:#fff;
+    background-color:#000;
+}
+.panel_height{
+    max-height: 610px;
+}

@@ -1,0 +1,49 @@
+<?php
+    require  'includes/common.php';
+    if(!isset($_SESSION['email'])){
+        header('location:index.php');
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Settings | E-Store</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <?php
+            include 'includes/header.php';
+        ?>
+        <div class="container-fluid build" id="content">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4" id="settings-container">
+                    <h4>Change Password</h4>
+                    <form action="settings_script.php" method="POST">
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="old_password"  placeholder="Old Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <span class="error"><?php if(!empty($_GET['password_match_error'])) {echo "*".$_GET['password_match_error']; }?></span>
+                            <span class="error"><?php if(!empty($_GET['old_password_error'])){ echo $_GET['old_password_error'];} ?></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="new_password" placeholder="New Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
+                            <span class="error"><?php if(!empty($_GET['new_password_error'])) {echo $_GET['new_password_error']; }?></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="retype_password"  placeholder="Re-type New Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" ><div><?php if(!empty($_GET['retype_password_error'])) {echo $_GET['retype_password_error']; }?></div>
+                            <span class="error"><?php if(!empty($_GET['retype_password_error'])) {echo $_GET['retype_password_error']; }?></span>
+                            <span class="error"><?php if(!empty($_GET['new_password_match_error'])) {echo $_GET['new_password_match_error']; }?></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Change</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php
+            include 'includes/footer.php';
+        ?>
+    </body>
+</html>
